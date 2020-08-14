@@ -1,0 +1,1 @@
+writeCardIC('CN_PERSON','CLEAR_IC','');
