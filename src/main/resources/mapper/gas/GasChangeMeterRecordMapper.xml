@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.gas.GasChangeMeterRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.gas.GasChangeMeterRecordEntity">
+        <id column="id" property="id" />
+        <result column="accountNumber" property="accountNumber" />
+        <result column="oldMeterId" property="oldMeterId" />
+        <result column="changeType" property="changeType" />
+        <result column="oldMeterNo" property="oldMeterNo" />
+        <result column="newMeterNo" property="newMeterNo" />
+        <result column="oldLastPointer" property="oldLastPointer" />
+        <result column="oldPointer" property="oldPointer" />
+        <result column="oldDosage" property="oldDosage" />
+        <result column="addGas" property="addGas" />
+        <result column="oldStartPointer" property="oldStartPointer" />
+        <result column="newStartPointer" property="newStartPointer" />
+        <result column="changeTime" property="changeTime" />
+        <result column="changeBy" property="changeBy" />
+        <result column="changeReason" property="changeReason" />
+        <result column="supplier" property="supplier" />
+        <result column="meterModel" property="meterModel" />
+        <result column="digit" property="digit" />
+        <result column="oldSupplier" property="oldSupplier" />
+        <result column="oldMeterModel" property="oldMeterModel" />
+        <result column="oldDigit" property="oldDigit" />
+        <result column="oldAntiTheftRing" property="oldAntiTheftRing" />
+        <result column="newAntiTheftRing" property="newAntiTheftRing" />
+        <result column="cancelled" property="cancelled" />
+        <result column="cancelTime" property="cancelTime" />
+        <result column="cancelBy" property="cancelBy" />
+        <result column="cancelByName" property="cancelByName" />
+        <result column="opByName" property="opByName" />
+        <result column="opBy" property="opBy" />
+        <result column="opAt" property="opAt" />
+        <result column="delFlag" property="delFlag" />
+        <result column="changeAt" property="changeAt" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, accountNumber, oldMeterId, changeType, oldMeterNo, newMeterNo, oldLastPointer, oldPointer, oldDosage, addGas, oldStartPointer, newStartPointer, changeTime, changeBy, changeReason, supplier, meterModel, digit, oldSupplier, oldMeterModel, oldDigit, oldAntiTheftRing, newAntiTheftRing, cancelled, cancelTime, cancelBy, cancelByName, opByName, opBy, opAt, delFlag, changeAt, type
+    </sql>
+
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.ConsumerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.ConsumerEntity">
+        <id column="CSM_id" property="csmId" />
+        <result column="CSM_Name" property="csmName" />
+        <result column="CSM_TEl1" property="csmTel1" />
+        <result column="CSM_TEL2" property="csmTel2" />
+        <result column="CSM_Addr" property="csmAddr" />
+        <result column="Community_Comm_id" property="communityCommId" />
+        <result column="CSM_IsBlacklist" property="csmIsblacklist" />
+        <result column="CSM_IsOpened" property="csmIsopened" />
+        <result column="CSM_Employeeid" property="csmEmployeeid" />
+        <result column="CSM_IsDeleted" property="csmIsdeleted" />
+        <result column="CSM_Remark" property="csmRemark" />
+        <result column="CSM_CreateTime" property="csmCreatetime" />
+        <result column="CSM_UpdateTime" property="csmUpdatetime" />
+        <result column="CSM_OpenTime" property="csmOpentime" />
+        <result column="CSM_Res1" property="csmRes1" />
+        <result column="CSM_Res2" property="csmRes2" />
+        <result column="CSM_Res3" property="csmRes3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CSM_id, CSM_Name, CSM_TEl1, CSM_TEL2, CSM_Addr, Community_Comm_id, CSM_IsBlacklist, CSM_IsOpened, CSM_Employeeid, CSM_IsDeleted, CSM_Remark, CSM_CreateTime, CSM_UpdateTime, CSM_OpenTime, CSM_Res1, CSM_Res2, CSM_Res3
+    </sql>
+
+</mapper>

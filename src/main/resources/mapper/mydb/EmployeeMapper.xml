@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.EmployeeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.EmployeeEntity">
+        <id column="employee_id" property="employeeId" />
+        <result column="Ep_PWD" property="epPwd" />
+        <result column="Ep_Name" property="epName" />
+        <result column="Ep_Tel" property="epTel" />
+        <result column="Ep_Addr" property="epAddr" />
+        <result column="Ep_IsAvaiable" property="epIsavaiable" />
+        <result column="Ep_Remark" property="epRemark" />
+        <result column="Ep_Addemployeeid" property="epAddemployeeid" />
+        <result column="Ep_CreateTime" property="epCreatetime" />
+        <result column="Ep_UpdateTime" property="epUpdatetime" />
+        <result column="Ep_Res1" property="epRes1" />
+        <result column="Ep_Res2" property="epRes2" />
+        <result column="Ep_Res3" property="epRes3" />
+        <result column="Ep_IsAllAuthority" property="epIsallauthority" />
+        <result column="Ep_IsInitset" property="epIsinitset" />
+        <result column="Ep_IsSyset" property="epIssyset" />
+        <result column="Ep_IsEmpset" property="epIsempset" />
+        <result column="Ep_IsRecordInf" property="epIsrecordinf" />
+        <result column="Ep_IsManageCommunity" property="epIsmanagecommunity" />
+        <result column="Ep_IsManageConsumer" property="epIsmanageconsumer" />
+        <result column="Ep_IsManageWatmeter" property="epIsmanagewatmeter" />
+        <result column="Ep_IsManageWatprice" property="epIsmanagewatprice" />
+        <result column="Ep_IsManageSurcharge" property="epIsmanagesurcharge" />
+        <result column="Ep_IsBusCharge" property="epIsbuscharge" />
+        <result column="Ep_IsCardOperator" property="epIscardoperator" />
+        <result column="Ep_IsOpenAccount" property="epIsopenaccount" />
+        <result column="Ep_IsBuyWater" property="epIsbuywater" />
+        <result column="Ep_IsRelatedBus" property="epIsrelatedbus" />
+        <result column="Ep_IsIntegQuery" property="epIsintegquery" />
+        <result column="Ep_IsConsumerQuery" property="epIsconsumerquery" />
+        <result column="Ep_IsBuyRecordQuery" property="epIsbuyrecordquery" />
+        <result column="Ep_IsIntegInfQuery" property="epIsinteginfquery" />
+        <result column="Ep_IsDateRpeortQuery" property="epIsdaterpeortquery" />
+        <result column="Ep_IsEquipOverhaul" property="epIsequipoverhaul" />
+        <result column="Ep_CommAuthority" property="epCommauthority" />
+        <result column="Ep_canFreeWater" property="epCanfreewater" />
+        <result column="Ep_PrintPreview" property="epPrintpreview" />
+        <result column="Ep_W_StandCard" property="epWStandcard" />
+        <result column="Ep_W_ParaCard" property="epWParacard" />
+        <result column="Ep_W_MeterCodeCard" property="epWMetercodecard" />
+        <result column="Ep_W_FaultClearCard" property="epWFaultclearcard" />
+        <result column="Ep_W_ClearCard" property="epWClearcard" />
+        <result column="Ep_W_MeterChangeCard" property="epWMeterchangecard" />
+        <result column="Ep_W_BackWaterCard" property="epWBackwatercard" />
+        <result column="Ep_W_TestCard" property="epWTestcard" />
+        <result column="Ep_W_WaterCheckCard" property="epWWatercheckcard" />
+        <result column="Ep_W_TimeCheckCard" property="epWTimecheckcard" />
+        <result column="Ep_W_TmpChargeCard" property="epWTmpchargecard" />
+        <result column="Ep_W_ValveCard" property="epWValvecard" />
+        <result column="Ep_W_SuperValveCard" property="epWSupervalvecard" />
+        <result column="Ep_GPrintInvoice" property="epGprintinvoice" />
+        <result column="Ep_IsWriteCard" property="epIswritecard" />
+        <result column="Ep_IsReadCard" property="epIsreadcard" />
+        <result column="Ep_IsMakeupCard" property="epIsmakeupcard" />
+        <result column="Ep_IsUserControl" property="epIsusercontrol" />
+        <result column="Ep_IsTransferUser" property="epIstransferuser" />
+        <result column="Ep_IsBlacklistQuery" property="epIsblacklistquery" />
+        <result column="Ep_IsDeleteUser" property="epIsdeleteuser" />
+        <result column="Ep_IsPrintInvoice" property="epIsprintinvoice" />
+        <result column="Ep_IsBackWater" property="epIsbackwater" />
+        <result column="Ep_IsUserScan" property="epIsuserscan" />
+        <result column="Ep_IsInvoiceDesign" property="epIsinvoicedesign" />
+        <result column="Ep_IsOpenQuery" property="epIsopenquery" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        employee_id, Ep_PWD, Ep_Name, Ep_Tel, Ep_Addr, Ep_IsAvaiable, Ep_Remark, Ep_Addemployeeid, Ep_CreateTime, Ep_UpdateTime, Ep_Res1, Ep_Res2, Ep_Res3, Ep_IsAllAuthority, Ep_IsInitset, Ep_IsSyset, Ep_IsEmpset, Ep_IsRecordInf, Ep_IsManageCommunity, Ep_IsManageConsumer, Ep_IsManageWatmeter, Ep_IsManageWatprice, Ep_IsManageSurcharge, Ep_IsBusCharge, Ep_IsCardOperator, Ep_IsOpenAccount, Ep_IsBuyWater, Ep_IsRelatedBus, Ep_IsIntegQuery, Ep_IsConsumerQuery, Ep_IsBuyRecordQuery, Ep_IsIntegInfQuery, Ep_IsDateRpeortQuery, Ep_IsEquipOverhaul, Ep_CommAuthority, Ep_canFreeWater, Ep_PrintPreview, Ep_W_StandCard, Ep_W_ParaCard, Ep_W_MeterCodeCard, Ep_W_FaultClearCard, Ep_W_ClearCard, Ep_W_MeterChangeCard, Ep_W_BackWaterCard, Ep_W_TestCard, Ep_W_WaterCheckCard, Ep_W_TimeCheckCard, Ep_W_TmpChargeCard, Ep_W_ValveCard, Ep_W_SuperValveCard, Ep_GPrintInvoice, Ep_IsWriteCard, Ep_IsReadCard, Ep_IsMakeupCard, Ep_IsUserControl, Ep_IsTransferUser, Ep_IsBlacklistQuery, Ep_IsDeleteUser, Ep_IsPrintInvoice, Ep_IsBackWater, Ep_IsUserScan, Ep_IsInvoiceDesign, Ep_IsOpenQuery
+    </sql>
+
+</mapper>

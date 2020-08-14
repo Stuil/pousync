@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.WatermeterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.WatermeterEntity">
+        <id column="WaterMeter_id" property="watermeterId" />
+        <result column="WM_Type" property="wmType" />
+        <result column="WM_Name" property="wmName" />
+        <result column="WM_Remark" property="wmRemark" />
+        <result column="WM_IsAvailable" property="wmIsavailable" />
+        <result column="WM_CreateTime" property="wmCreatetime" />
+        <result column="WM_UpDateTime" property="wmUpdatetime" />
+        <result column="WM_Res1" property="wmRes1" />
+        <result column="WM_Res2" property="wmRes2" />
+        <result column="WM_Res3" property="wmRes3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        WaterMeter_id, WM_Type, WM_Name, WM_Remark, WM_IsAvailable, WM_CreateTime, WM_UpDateTime, WM_Res1, WM_Res2, WM_Res3
+    </sql>
+
+</mapper>
