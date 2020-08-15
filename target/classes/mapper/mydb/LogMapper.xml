@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.LogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.LogEntity">
+        <id column="L_id" property="lId" />
+        <result column="L_employeeid" property="lEmployeeid" />
+        <result column="L_content" property="lContent" />
+        <result column="L_CreateTime" property="lCreatetime" />
+        <result column="L_Type" property="lType" />
+        <result column="L_res1" property="lRes1" />
+        <result column="L_res2" property="lRes2" />
+        <result column="L_res3" property="lRes3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        L_id, L_employeeid, L_content, L_CreateTime, L_Type, L_res1, L_res2, L_res3
+    </sql>
+
+</mapper>

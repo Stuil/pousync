@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.TransfercsmMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.TransfercsmEntity">
+        <id column="TC_id" property="tcId" />
+        <result column="TC_CSM_id" property="tcCsmId" />
+        <result column="TC_CSM_OldName" property="tcCsmOldname" />
+        <result column="TC_CSM_NewName" property="tcCsmNewname" />
+        <result column="TC_CSM_OpenedDate" property="tcCsmOpeneddate" />
+        <result column="TC_CSM_TransferDate" property="tcCsmTransferdate" />
+        <result column="TC_EmployeeId" property="tcEmployeeid" />
+        <result column="TC_Remark" property="tcRemark" />
+        <result column="TC_CSM_Addr" property="tcCsmAddr" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        TC_id, TC_CSM_id, TC_CSM_OldName, TC_CSM_NewName, TC_CSM_OpenedDate, TC_CSM_TransferDate, TC_EmployeeId, TC_Remark, TC_CSM_Addr
+    </sql>
+
+</mapper>

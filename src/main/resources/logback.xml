@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
     <!-- %m输出的信息,%p日志级别,%t线程名,%d日期,%c类的全名,,,, -->
-    <property name="LOG_PATH" value="G:/logs/proc"/>
+    <property name="LOG_PATH" value="E:/logs/sync"/>
     <!--设置系统日志目录-->
-    <property name="APPDIR" value="proc"/>
+    <property name="APPDIR" value="sync"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <!--<pattern>%d %p (%file:%line\)- %m%n</pattern>-->

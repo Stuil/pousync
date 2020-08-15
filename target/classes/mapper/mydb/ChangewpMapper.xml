@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.ChangewpMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.ChangewpEntity">
+        <id column="CW_id" property="cwId" />
+        <result column="CW_ConsumerId" property="cwConsumerid" />
+        <result column="CW_OldWP_id" property="cwOldwpId" />
+        <result column="CW_NewWP_id" property="cwNewwpId" />
+        <result column="CW_CreateTime" property="cwCreatetime" />
+        <result column="CW_Remark" property="cwRemark" />
+        <result column="CW_EmployeeId" property="cwEmployeeid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CW_id, CW_ConsumerId, CW_OldWP_id, CW_NewWP_id, CW_CreateTime, CW_Remark, CW_EmployeeId
+    </sql>
+
+</mapper>

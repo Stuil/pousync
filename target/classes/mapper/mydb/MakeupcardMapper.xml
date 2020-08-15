@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.MakeupcardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.MakeupcardEntity">
+        <id column="MUC_id" property="mucId" />
+        <result column="MUC_OPType" property="mucOptype" />
+        <result column="MUC_SwipFlag" property="mucSwipflag" />
+        <result column="MUC_CardPrice" property="mucCardprice" />
+        <result column="MUC_IsChangeMeter" property="mucIschangemeter" />
+        <result column="MUC_ConsumerId" property="mucConsumerid" />
+        <result column="MUC_EmployeeId" property="mucEmployeeid" />
+        <result column="MUC_RemainWater" property="mucRemainwater" />
+        <result column="MUC_Remark" property="mucRemark" />
+        <result column="MUC_CreateTime" property="mucCreatetime" />
+        <result column="MUC_UpdateTime" property="mucUpdatetime" />
+        <result column="MUC_Res1" property="mucRes1" />
+        <result column="MUC_Res2" property="mucRes2" />
+        <result column="MUC_Res3" property="mucRes3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        MUC_id, MUC_OPType, MUC_SwipFlag, MUC_CardPrice, MUC_IsChangeMeter, MUC_ConsumerId, MUC_EmployeeId, MUC_RemainWater, MUC_Remark, MUC_CreateTime, MUC_UpdateTime, MUC_Res1, MUC_Res2, MUC_Res3
+    </sql>
+
+</mapper>

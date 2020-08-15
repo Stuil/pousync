@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.CorporationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.CorporationEntity">
+        <id column="Co_id" property="coId" />
+        <result column="Co_name" property="coName" />
+        <result column="Co_num" property="coNum" />
+        <result column="Co_AlertBench" property="coAlertbench" />
+        <result column="Co_MaxBuyOnce" property="coMaxbuyonce" />
+        <result column="Co_Maxhording" property="coMaxhording" />
+        <result column="Co_MaxOverDraft" property="coMaxoverdraft" />
+        <result column="Co_PreSaving" property="coPresaving" />
+        <result column="Co_SysKey" property="coSyskey" />
+        <result column="Co_Remark" property="coRemark" />
+        <result column="Co_Addr" property="coAddr" />
+        <result column="Co_CreateTime" property="coCreatetime" />
+        <result column="Co_Updatetime" property="coUpdatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Co_id, Co_name, Co_num, Co_AlertBench, Co_MaxBuyOnce, Co_Maxhording, Co_MaxOverDraft, Co_PreSaving, Co_SysKey, Co_Remark, Co_Addr, Co_CreateTime, Co_Updatetime
+    </sql>
+
+</mapper>

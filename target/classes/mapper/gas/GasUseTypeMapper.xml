@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.gas.GasUseTypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.gas.GasUseTypeEntity">
+        <id column="code" property="code" />
+        <result column="name" property="name" />
+        <result column="gasType" property="gasType" />
+        <result column="minGasStorage" property="minGasStorage" />
+        <result column="maxGasStorage" property="maxGasStorage" />
+        <result column="maxGasStorageIC" property="maxGasStorageIC" />
+        <result column="warnGas" property="warnGas" />
+        <result column="enabled" property="enabled" />
+        <result column="note" property="note" />
+        <result column="opBy" property="opBy" />
+        <result column="opAt" property="opAt" />
+        <result column="delFlag" property="delFlag" />
+        <result column="publicUser" property="publicUser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        code, name, gasType, minGasStorage, maxGasStorage, maxGasStorageIC, warnGas, enabled, note, opBy, opAt, delFlag, publicUser
+    </sql>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.CardoprecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.CardoprecordEntity">
+        <id column="CO_id" property="coId" />
+        <result column="CO_OPType" property="coOptype" />
+        <result column="CO_ConsumerId" property="coConsumerid" />
+        <result column="CO_EmployeeId" property="coEmployeeid" />
+        <result column="CO_WaterType" property="coWatertype" />
+        <result column="CO_WaterCount" property="coWatercount" />
+        <result column="CO_WaterPrice" property="coWaterprice" />
+        <result column="CO_unitNormalFee" property="coUnitnormalfee" />
+        <result column="CO_unitSurcharge" property="coUnitsurcharge" />
+        <result column="CO_TotalNormalFee" property="coTotalnormalfee" />
+        <result column="CO_TotalSurcharge" property="coTotalsurcharge" />
+        <result column="CO_Remark" property="coRemark" />
+        <result column="CO_CreateTime" property="coCreatetime" />
+        <result column="CO_UpdateTime" property="coUpdatetime" />
+        <result column="CO_IsPrint" property="coIsprint" />
+        <result column="CO_Freewater" property="coFreewater" />
+        <result column="CO_LastRemainMoney" property="coLastremainmoney" />
+        <result column="CO_TodayRemainMoney" property="coTodayremainmoney" />
+        <result column="CO_ConsumerName" property="coConsumername" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CO_id, CO_OPType, CO_ConsumerId, CO_EmployeeId, CO_WaterType, CO_WaterCount, CO_WaterPrice, CO_unitNormalFee, CO_unitSurcharge, CO_TotalNormalFee, CO_TotalSurcharge, CO_Remark, CO_CreateTime, CO_UpdateTime, CO_IsPrint, CO_Freewater, CO_LastRemainMoney, CO_TodayRemainMoney, CO_ConsumerName
+    </sql>
+
+</mapper>

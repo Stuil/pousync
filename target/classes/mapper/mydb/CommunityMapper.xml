@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.CommunityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.CommunityEntity">
+        <id column="Comm_id" property="commId" />
+        <result column="Comm_Name" property="commName" />
+        <result column="Comm_Admin" property="commAdmin" />
+        <result column="Comm_Remark" property="commRemark" />
+        <result column="Comm_District" property="commDistrict" />
+        <result column="Comm_City" property="commCity" />
+        <result column="Comm_SerialNum" property="commSerialnum" />
+        <result column="Comm_ParentId" property="commParentid" />
+        <result column="Comm_Employeeid" property="commEmployeeid" />
+        <result column="Comm_IsAvailable" property="commIsavailable" />
+        <result column="Comm_Res1" property="commRes1" />
+        <result column="Comm_Res2" property="commRes2" />
+        <result column="Comm_res3" property="commRes3" />
+        <result column="Comm_CreateTime" property="commCreatetime" />
+        <result column="Comm_UpdateTime" property="commUpdatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Comm_id, Comm_Name, Comm_Admin, Comm_Remark, Comm_District, Comm_City, Comm_SerialNum, Comm_ParentId, Comm_Employeeid, Comm_IsAvailable, Comm_Res1, Comm_Res2, Comm_res3, Comm_CreateTime, Comm_UpdateTime
+    </sql>
+
+</mapper>

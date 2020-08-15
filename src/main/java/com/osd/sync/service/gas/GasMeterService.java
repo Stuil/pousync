@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-08-13
  */
 public interface GasMeterService extends IService<GasMeterEntity> {
-
+    boolean insertMeter(GasMeterEntity gasMeterEntity);
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.mydb.WaterpriceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.mydb.WaterpriceEntity">
+        <id column="WP_id" property="wpId" />
+        <result column="WP_SerialNum" property="wpSerialnum" />
+        <result column="WP_WaterName" property="wpWatername" />
+        <result column="WP_Price" property="wpPrice" />
+        <result column="surcharge_SC_id" property="surchargeScId" />
+        <result column="WP_IsAvailable" property="wpIsavailable" />
+        <result column="WP_UpdateTime" property="wpUpdatetime" />
+        <result column="WP_CreateTime" property="wpCreatetime" />
+        <result column="WP_Res1" property="wpRes1" />
+        <result column="WP_Res2" property="wpRes2" />
+        <result column="WP_Res3" property="wpRes3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        WP_id, WP_SerialNum, WP_WaterName, WP_Price, surcharge_SC_id, WP_IsAvailable, WP_UpdateTime, WP_CreateTime, WP_Res1, WP_Res2, WP_Res3
+    </sql>
+
+</mapper>
