@@ -100,6 +100,9 @@ public class IndexController {
         } else {
             consumerEntities = consumerService.list(new QueryWrapper<ConsumerEntity>().orderByAsc("CSM_id"));
         }
+        if(Lang.isEmpty(consumerEntities)){
+            return;
+        }
         consumerEntities.forEach(item -> {
             UsercardinfoEntity cardInfo = usercardinfoService.getById(item.getCsmId());
             // 金凤库购气+补气次数
