@@ -1,5 +1,7 @@
 package com.osd.sync.timer;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @title: SyncInfo
  * @description: 同步信息
@@ -8,6 +10,6 @@ package com.osd.sync.timer;
  * @copyright: Copyright (c) 2020
  * @version: 1.0
  */
-
+@Component
 public class SyncInfo {
 }
