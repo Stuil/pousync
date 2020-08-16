@@ -163,8 +163,10 @@ public class IndexController {
             gasUser.setMeterId(UUID.randomUUID().toString().replaceAll("-", ""));
             gasUser.setOpenTime(item.getCsmOpentime().toEpochSecond(ZoneOffset.of("+8")));
             gasUser.setAddGas(BigDecimal.valueOf(0));
-            // fixme 用户状态
+            // fixme 用户状态  是否公用户
             gasUser.setStatus(item.getCsmIsdeleted());
+            // fixme 是否删除
+            gasUser.setDelFlag(item.getCsmIsdeleted()==0?false:true);
             gasUser.setCanDelete(false);
             gasUser.setHeatingBand(0);
             gasUser.setBatchOpen(0);
