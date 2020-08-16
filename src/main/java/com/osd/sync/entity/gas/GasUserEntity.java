@@ -18,7 +18,7 @@ package com.osd.sync.entity.gas;
 * @since 2020-08-13
 */
     @Data
-        @EqualsAndHashCode(callSuper = false)
+    @EqualsAndHashCode(callSuper = false)
     @Accessors(chain = true)
     @TableName("gas_user")
     public class GasUserEntity implements Serializable {
@@ -138,8 +138,8 @@ package com.osd.sync.entity.gas;
             /**
             * 是否公用户
             */
-        @TableField("publicUser")
-    private Boolean publicUser;
+      /*  @TableField("publicUser")
+    private Boolean publicUser;*/
 
             /**
             * 用户状态

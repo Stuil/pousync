@@ -3,6 +3,8 @@ package com.osd.sync.service.mydb;
 import com.osd.sync.entity.mydb.UsercardinfoEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  * 用户卡信息 服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UsercardinfoService extends IService<UsercardinfoEntity> {
 
+    List<UsercardinfoEntity> selectCard();
 }

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@MapperScan("com.osd.sync.mapper")
+@MapperScan({"com.osd.sync.mapper","com.osd.sync.mapper.*"})
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class SyncApplication {
 

@@ -22,6 +22,6 @@ public class GasUserServiceImpl extends ServiceImpl<GasUserMapper, GasUserEntity
 
     @Override
     public boolean insetUser(GasUserEntity gasUserEntity) {
-        return this.save(gasUserEntity);
+        return this.saveOrUpdate(gasUserEntity);
     }
 }

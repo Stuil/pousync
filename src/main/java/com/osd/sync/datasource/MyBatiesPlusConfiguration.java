@@ -16,10 +16,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 
 import javax.sql.DataSource;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
+
 /**
  * @title: MyBatiesPlusConfiguration
  * @description:
@@ -30,7 +34,7 @@ import java.util.Map;
  */
 
 @Configuration
-@MapperScan("com.osd.sync.mapper.*")
+@MapperScan({"com.osd.sync.mapper","com.osd.sync.mapper.*"})
 public class MyBatiesPlusConfiguration {
 
     /*
@@ -45,7 +49,7 @@ public class MyBatiesPlusConfiguration {
         // 设置最大单页限制数量，默认 500 条，-1 不受限制
         // paginationInterceptor.setLimit(500);
         // 开启 count 的 join 优化,只针对部分 left join
-        paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize());
+       // paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize());
         return paginationInterceptor;
     }
 
@@ -95,7 +99,10 @@ public class MyBatiesPlusConfiguration {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
         sqlSessionFactory.setDataSource(multipleDataSource(db1(),db2()));
-        //sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/*/*Mapper.xml"));
+        // javabean 配置xml路径的话 yml里会失效
+      //  sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:/mapper/*/*Mapper.xml"));
+       // 多路径　xml 路径
+        sqlSessionFactory.setMapperLocations(resolveMapperLocations());
 
         MybatisConfiguration configuration = new MybatisConfiguration();
         //configuration.setDefaultScriptingLanguage(MybatisXMLLanguageDriver.class);
@@ -121,4 +128,27 @@ public class MyBatiesPlusConfiguration {
         conf.setRefresh(true);
         return conf;
     }*/
+
+    /**
+     * @description: 多路径
+     * @author: zwh
+     */
+    public Resource[] resolveMapperLocations() {
+        ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+        List<String> mapperLocations = new ArrayList<>();
+        mapperLocations.add("classpath*:/mapper/*/*Mapper.xml");
+        mapperLocations.add("classpath*:/mapper/*Mapper.xml");
+        List<Resource> resources = new ArrayList();
+        if (mapperLocations != null) {
+            for (String mapperLocation : mapperLocations) {
+                try {
+                    Resource[] mappers = resourceResolver.getResources(mapperLocation);
+                    resources.addAll(Arrays.asList(mappers));
+                } catch (IOException e) {
+                    // ignore
+                }
+            }
+        }
+        return resources.toArray(new Resource[resources.size()]);
+    }
 }

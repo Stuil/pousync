@@ -22,6 +22,6 @@ public class GasMeterServiceImpl extends ServiceImpl<GasMeterMapper, GasMeterEnt
 
     @Override
     public boolean insertMeter(GasMeterEntity gasMeterEntity) {
-        return this.save(gasMeterEntity);
+        return this.saveOrUpdate(gasMeterEntity);
     }
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.osd.sync.mapper.gas.GasUserChargeRecord2019Mapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.osd.sync.entity.gas.GasUserChargeRecord2019Entity">
+        <id column="id" property="id" />
+        <result column="accountNumber" property="accountNumber" />
+        <result column="meterId" property="meterId" />
+        <result column="paidAmount" property="paidAmount" />
+        <result column="changeMoney" property="changeMoney" />
+        <result column="arrears" property="arrears" />
+        <result column="balance" property="balance" />
+        <result column="paidLateFee" property="paidLateFee" />
+        <result column="reduceLateFee" property="reduceLateFee" />
+        <result column="reduceLateFeeNote" property="reduceLateFeeNote" />
+        <result column="preStored" property="preStored" />
+        <result column="payMethod" property="payMethod" />
+        <result column="paySource" property="paySource" />
+        <result column="useType" property="useType" />
+        <result column="userType" property="userType" />
+        <result column="buyGas" property="buyGas" />
+        <result column="buyGasAmount" property="buyGasAmount" />
+        <result column="buyGasTimes" property="buyGasTimes" />
+        <result column="totalBuyGas" property="totalBuyGas" />
+        <result column="totalBuyGasAmount" property="totalBuyGasAmount" />
+        <result column="feeDetail" property="feeDetail" />
+        <result column="payStatus" property="payStatus" />
+        <result column="payTime" property="payTime" />
+        <result column="paySerialNo" property="paySerialNo" />
+        <result column="status" property="status" />
+        <result column="revokeReason" property="revokeReason" />
+        <result column="revokeImage" property="revokeImage" />
+        <result column="revokeBy" property="revokeBy" />
+        <result column="revokeByName" property="revokeByName" />
+        <result column="revokeTime" property="revokeTime" />
+        <result column="settleStatus" property="settleStatus" />
+        <result column="settleTime" property="settleTime" />
+        <result column="opByName" property="opByName" />
+        <result column="opByNo" property="opByNo" />
+        <result column="serviceHallId" property="serviceHallId" />
+        <result column="opBy" property="opBy" />
+        <result column="opAt" property="opAt" />
+        <result column="delFlag" property="delFlag" />
+        <result column="userNewMoney" property="userNewMoney" />
+        <result column="userNewArrears" property="userNewArrears" />
+        <result column="rechargeReduceLateFee" property="rechargeReduceLateFee" />
+        <result column="payAccount" property="payAccount" />
+        <result column="settleBy" property="settleBy" />
+        <result column="settleByName" property="settleByName" />
+        <result column="onlyPayGasFee" property="onlyPayGasFee" />
+        <result column="refundGas" property="refundGas" />
+        <result column="devCode" property="devCode" />
+        <result column="note" property="note" />
+        <result column="commandStatus" property="commandStatus" />
+        <result column="writeICFail" property="writeICFail" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, accountNumber, meterId, paidAmount, changeMoney, arrears, balance, paidLateFee, reduceLateFee, reduceLateFeeNote, preStored, payMethod, paySource, useType, userType, buyGas, buyGasAmount, buyGasTimes, totalBuyGas, totalBuyGasAmount, feeDetail, payStatus, payTime, paySerialNo, status, revokeReason, revokeImage, revokeBy, revokeByName, revokeTime, settleStatus, settleTime, opByName, opByNo, serviceHallId, opBy, opAt, delFlag, userNewMoney, userNewArrears, rechargeReduceLateFee, payAccount, settleBy, settleByName, onlyPayGasFee, refundGas, devCode, note, commandStatus, writeICFail
+    </sql>
+
+</mapper>

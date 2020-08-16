@@ -26,7 +26,7 @@ public class Generator {
     private static final String outPutDir = projectPath + "/src/main/java";
     // 自定义
     private static final String author = "stuil";
-    public static String Pagk=".mydb";
+    public static String Pagk=".gas";
     // 包名
     private static final String packageName = "com.osd.sync";
     private static final String moduleName = "";
@@ -77,7 +77,7 @@ public class Generator {
     private static DataSourceConfig getDataSourceConfig() {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false");
+      //  dsc.setUrl("jdbc:mysql://localhost:3306/osd_gas?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false");
         // dsc.setSchemaName("public");
         String driverName = "com.mysql.cj.jdbc.Driver";
         dsc.setDriverName(driverName);
@@ -117,7 +117,7 @@ public class Generator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // ** 子项目 本文为父子项目 所以加上子项目路径，否则文件生成至父项目下
-                return projectPath + "/src/main/resources/mapper/mydb/" + tableInfo.getEntityName().replace("Entity", "")
+                return projectPath + "/src/main/resources/mapper/gas/" + tableInfo.getEntityName().replace("Entity", "")
                         + "Mapper" + StringPool.DOT_XML;
             }
         });

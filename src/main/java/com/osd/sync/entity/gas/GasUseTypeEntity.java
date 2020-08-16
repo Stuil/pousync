@@ -17,7 +17,7 @@ package com.osd.sync.entity.gas;
 * @since 2020-08-13
 */
     @Data
-        @EqualsAndHashCode(callSuper = false)
+    @EqualsAndHashCode(callSuper = false)
     @Accessors(chain = true)
     @TableName("gas_use_type")
     public class GasUseTypeEntity implements Serializable {
