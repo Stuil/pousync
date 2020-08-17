@@ -12,8 +12,6 @@ import com.osd.sync.service.gas.*;
 import com.osd.sync.service.mydb.*;
 import com.osd.sync.utils.MoneyUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.nutz.aop.interceptor.ioc.TransAop;
-import org.nutz.ioc.aop.Aop;
 import org.nutz.lang.Lang;
 import org.nutz.lang.Times;
 import org.nutz.lang.util.NutMap;
@@ -21,8 +19,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -30,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @title: IndexServer
@@ -85,6 +82,7 @@ public class IndexServer {
   //  @Aop(TransAop.READ_COMMITTED)
     public void syncInfo(Integer id) {
         try {
+            AtomicInteger count= new AtomicInteger();
             // 系统内部小区
             Map<String, Object> gasComm = gasAreaCommunityService.getListAreaToMap();
             // 金凤小区
@@ -345,6 +343,8 @@ public class IndexServer {
                 boolean user = gasUserService.insetUser(gasUser);
                 if (!user) {
                     log.error("失败:{}", gasUser.getAccountNumber());
+                }else {
+                    count.getAndIncrement();
                 }
                 int c=1/0;
                 // 表具入库
@@ -380,6 +380,7 @@ public class IndexServer {
                     }
                 }
             });
+            log.info("用户成功{}条",count);
         } catch (Exception e) {
             e.printStackTrace();
          //   TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
