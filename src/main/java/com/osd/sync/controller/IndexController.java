@@ -55,6 +55,6 @@ public class IndexController {
         long start = System.currentTimeMillis() / 1000;
         indexServer.syncInfo(id);
         long end = System.currentTimeMillis() / 1000;
-        return start + "-----" + end + "----------" + (end - start)+"===同步人員id"+id==null?"all":id+"";
+        return start + "-----" + end + "----------" + (end - start)+"===同步人員id"+(id==null?"all":id+"");
     }
 }
