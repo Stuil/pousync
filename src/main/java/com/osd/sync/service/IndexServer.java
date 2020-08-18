@@ -346,7 +346,6 @@ public class IndexServer {
                 }else {
                     count.getAndIncrement();
                 }
-                int c=1/0;
                 // 表具入库
                 boolean meter = gasMeterService.insertMeter(gasMeter);
                 if (!meter) {
