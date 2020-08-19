@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Service
 @Slf4j
-public class SyncDataInfoServer {
+public class DataInfoServer {
 
 
     @Autowired
@@ -263,8 +263,15 @@ public class SyncDataInfoServer {
                     } else {
                         meterCount.getAndIncrement();
                     }
+                    // 购气次数
+                    int countGas=0;
+                    // 总购气量
+                    int countGasSum=0;
+                    // 总购金额
+                    float countMoney=0f;
 
-                    jfAcc.forEach(accGas -> {
+                    for (int i=0;i<jfAcc.size();i++){
+                        CardoprecordEntity accGas=jfAcc.get(i);
                         // 购气
                         if (accGas.getCoWatercount() > 0) {
                             GasUserChargeRecordEntity gasUserCharge = new GasUserChargeRecordEntity();
@@ -286,9 +293,13 @@ public class SyncDataInfoServer {
                             gasUserCharge.setBuyGas(BigDecimal.valueOf(accGas.getCoWatercount()));
                             gasUserCharge.setBuyGasAmount(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoTotalnormalfee())));
                             // 购气次数
-                            gasUserCharge.setBuyGasTimes(Long.valueOf(gasMeter.getBuyGasCount()));
-                            gasUserCharge.setTotalBuyGas(BigDecimal.valueOf(buyGasJfSum));
-                            gasUserCharge.setTotalBuyGasAmount(buyMoney);
+                            gasUserCharge.setBuyGasTimes(Long.valueOf(countGas++));
+                            // 总购气量
+                            countGasSum=countGasSum+accGas.getCoWatercount();
+                            gasUserCharge.setTotalBuyGas(BigDecimal.valueOf(countGasSum));
+                            // 总购金额
+                            countMoney=countMoney+accGas.getCoTotalnormalfee();
+                            gasUserCharge.setTotalBuyGasAmount(MoneyUtil.yuanToLi(String.valueOf(countMoney)));
                             // 费用计算明细
                             long price = MoneyUtil.yuanToLi(String.valueOf(accGas.getCoUnitnormalfee()));//单价
                             NutMap feeDetailMap = NutMap.NEW().setv("ladder", false);
@@ -350,7 +361,8 @@ public class SyncDataInfoServer {
                             gasMendGasEntity.setMendGasAmount(0L);
                             long price = MoneyUtil.yuanToLi(String.valueOf(accGas.getCoUnitnormalfee()));//单价
                             gasMendGasEntity.setCostMoney(price * accGas.getCoFreewater());
-                            gasMendGasEntity.setBuyGasTimes(gasMeter.getBuyGasCount());
+                            // fixme  补气记录总购次数
+                            gasMendGasEntity.setBuyGasTimes(countGas++);
                             gasMendGasEntity.setChargeType(0);
                             gasMendGasEntity.setFeeDetail("");
                             gasMendGasEntity.setDelFlag(false);
@@ -398,7 +410,7 @@ public class SyncDataInfoServer {
                             }
                             refundGasList.add(gasRefundGasEntity);
                         }
-                    });
+                    }
                 });
 
             });
