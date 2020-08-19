@@ -67,6 +67,6 @@ public class IndexController {
         long start = System.currentTimeMillis() / 1000;
         syncDataInfoServer.syncCommAndConsumer(id);
         long end = System.currentTimeMillis() / 1000;
-        return start + "-----" + end + "----------" + (end - start)+"===同步id"+(id==null?"all":id+"");
+        return start + "-----" + end + "----------" + (end - start);
     }
 }
