@@ -96,7 +96,7 @@ public class SyncDataInfoServer {
                 List<ConsumerEntity> consumer = consumerService.list(new QueryWrapper<ConsumerEntity>().eq("Community_Comm_id", area.getCommId()));
                 GasAreaCommunityEntity areaCommunity = new GasAreaCommunityEntity();
                 areaCommunity.setId(getUUID());
-                areaCommunity.setName(area.getCommName() + "(金凤系统小区)");
+                areaCommunity.setName(area.getCommName() + "(金凤)");
                 areaCommunity.setAddress(areaCommunity.getName());
                 areaCommunity.setOldKeywords(areaCommunity.getName());
                 areaCommunity.setOpBy("system import");
@@ -208,7 +208,6 @@ public class SyncDataInfoServer {
                     gasUser.setStatus(item.getCsmIsdeleted() == 0 ? 1 : 4);
                     gasUser.setDelFlag(false);
                     // 是否公用
-                    // gasUser.setPublicUser(jf_public_user.get(gasUser.getUseType()));
                     gasUser.setCanDelete(false);
                     gasUser.setHeatingBand(0);
                     gasUser.setBatchOpen(0);
@@ -245,7 +244,7 @@ public class SyncDataInfoServer {
                     gasMeter.setMeterNo("");
                     gasMeter.setSupplier("JF");
                     // fixme  平台创建
-                    gasMeter.setModelId("7f5ad25e1ea7410da7bdd1296e335f6d");
+                    gasMeter.setModelId("de22710d9c0e46ceb5433aac577a07e0");
                     gasMeter.setDigit(0);
                     gasMeter.setDelFlag(false);
                     gasMeter.setCardNo(String.valueOf(cardInfo.getCardId()));
@@ -277,7 +276,7 @@ public class SyncDataInfoServer {
                             gasUserCharge.setArrears(0L);
                             gasUserCharge.setBalance(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoLastremainmoney())));
                             gasUserCharge.setUserNewMoney(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoTodayremainmoney())));
-                            gasUserCharge.setPreStored(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoTodayremainmoney())));
+                            gasUserCharge.setPreStored(Long.valueOf(0));
                             gasUserCharge.setPayMethod(0);
                             gasUserCharge.setPaySource(2);
                             gasUserCharge.setUseType(gasUser.getUseType());
