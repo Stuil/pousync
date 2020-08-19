@@ -10,6 +10,7 @@ import com.osd.sync.entity.mydb.MakeupcardEntity;
 import com.osd.sync.entity.mydb.UsercardinfoEntity;
 import com.osd.sync.model.UserCardModel;
 import com.osd.sync.service.IndexServer;
+import com.osd.sync.service.SyncDataInfoServer;
 import com.osd.sync.service.UserCardService;
 import com.osd.sync.service.gas.*;
 import com.osd.sync.service.mydb.*;
@@ -49,12 +50,23 @@ public class IndexController {
 
     @Autowired
     IndexServer indexServer;
+    @Autowired
+    SyncDataInfoServer syncDataInfoServer;
 
-    @RequestMapping("/sync")
-    public String sync(Integer id) {
+  //  @RequestMapping("/indexInfo")
+    public String indexInfo(Integer id) {
         long start = System.currentTimeMillis() / 1000;
         indexServer.syncInfo(id);
         long end = System.currentTimeMillis() / 1000;
         return start + "-----" + end + "----------" + (end - start)+"===同步人員id"+(id==null?"all":id+"");
+    }
+
+
+    @RequestMapping("/sync")
+    public String sync(Integer id) {
+        long start = System.currentTimeMillis() / 1000;
+        syncDataInfoServer.syncCommAndConsumer(id);
+        long end = System.currentTimeMillis() / 1000;
+        return start + "-----" + end + "----------" + (end - start)+"===同步id"+(id==null?"all":id+"");
     }
 }

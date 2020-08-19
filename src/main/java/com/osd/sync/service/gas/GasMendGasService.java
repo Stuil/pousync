@@ -16,4 +16,5 @@ import java.util.List;
  */
 public interface GasMendGasService extends IService<GasMendGasEntity> {
     boolean insertMendGas(List<GasMendGasEntity> gasMendGasEntity);
+    boolean saveOrUpdates(GasMendGasEntity gasMendGasEntity);
 }

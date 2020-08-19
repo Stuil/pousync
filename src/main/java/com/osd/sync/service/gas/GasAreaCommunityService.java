@@ -18,4 +18,9 @@ import java.util.Map;
 public interface GasAreaCommunityService extends IService<GasAreaCommunityEntity> {
     Map<String,Object> getListAreaToMap();
 
+    GasAreaCommunityEntity getOnes(String name);
+
+    boolean saves(GasAreaCommunityEntity gasAreaCommunityEntity);
+
+    boolean updates(GasAreaCommunityEntity gasAreaCommunityEntity);
 }

@@ -1,5 +1,6 @@
 package com.osd.sync.service.gas;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.osd.sync.datasource.DataSource;
 import com.osd.sync.datasource.DataSourceEnum;
 import com.osd.sync.entity.gas.GasAreaCommunityEntity;
@@ -32,5 +33,20 @@ public class GasAreaCommunityServiceImpl extends ServiceImpl<GasAreaCommunityMap
             map.put(item.getId(), item.getName());
         });
         return map;
+    }
+
+    @Override
+    public GasAreaCommunityEntity getOnes(String name) {
+        return this.getOne(new QueryWrapper<GasAreaCommunityEntity>().eq("name",name));
+    }
+
+    @Override
+    public boolean saves(GasAreaCommunityEntity gasAreaCommunityEntity) {
+        return this.save(gasAreaCommunityEntity);
+    }
+
+    @Override
+    public boolean updates(GasAreaCommunityEntity gasAreaCommunityEntity) {
+        return this.update(gasAreaCommunityEntity,new QueryWrapper<GasAreaCommunityEntity>().eq("name",gasAreaCommunityEntity.getName()));
     }
 }

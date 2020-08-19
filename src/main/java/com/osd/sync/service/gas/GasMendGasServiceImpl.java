@@ -27,4 +27,9 @@ public class GasMendGasServiceImpl extends ServiceImpl<GasMendGasMapper, GasMend
     public boolean insertMendGas(List<GasMendGasEntity> gasMendGasEntity) {
         return this.saveOrUpdateBatch(gasMendGasEntity);
     }
+
+    @Override
+    public boolean saveOrUpdates(GasMendGasEntity gasMendGasEntity) {
+        return this.saveOrUpdate(gasMendGasEntity);
+    }
 }

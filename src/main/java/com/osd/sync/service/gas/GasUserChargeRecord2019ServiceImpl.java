@@ -26,4 +26,9 @@ public class GasUserChargeRecord2019ServiceImpl extends ServiceImpl<GasUserCharg
     public boolean insert2019(List<GasUserChargeRecord2019Entity> entityList) {
         return this.saveOrUpdateBatch(entityList);
     }
+
+    @Override
+    public boolean saveOrupdates(GasUserChargeRecord2019Entity entityList) {
+        return this.saveOrUpdate(entityList);
+    }
 }

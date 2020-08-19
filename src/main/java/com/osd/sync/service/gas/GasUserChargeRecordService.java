@@ -15,4 +15,5 @@ import java.util.List;
  */
 public interface GasUserChargeRecordService extends IService<GasUserChargeRecordEntity> {
     boolean insertCharge(List<GasUserChargeRecordEntity> gasUserChargeRecordEntities);
+    boolean saveOrUpdates(GasUserChargeRecordEntity gasUserChargeRecordEntities);
 }

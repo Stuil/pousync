@@ -16,4 +16,5 @@ import java.util.List;
  */
 public interface GasUserChargeRecord2020Service extends IService<GasUserChargeRecord2020Entity> {
     boolean insert2020(List<GasUserChargeRecord2020Entity> entityList);
+    boolean saveOrUpdates(GasUserChargeRecord2020Entity entityList);
 }

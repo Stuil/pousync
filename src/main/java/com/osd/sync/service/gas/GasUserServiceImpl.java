@@ -1,5 +1,6 @@
 package com.osd.sync.service.gas;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.osd.sync.datasource.DataSource;
 import com.osd.sync.datasource.DataSourceEnum;
 import com.osd.sync.entity.gas.GasUserEntity;
@@ -23,6 +24,16 @@ public class GasUserServiceImpl extends ServiceImpl<GasUserMapper, GasUserEntity
 
     @Override
     public boolean insetUser(GasUserEntity gasUserEntity) {
-        return this.saveOrUpdate(gasUserEntity);
+        return this.save(gasUserEntity);
+    }
+
+    @Override
+    public boolean updateUser(GasUserEntity gasUserEntity) {
+        return this.updateById(gasUserEntity);
+    }
+
+    @Override
+    public GasUserEntity getByAcc(String account) {
+        return this.getById(account);
     }
 }

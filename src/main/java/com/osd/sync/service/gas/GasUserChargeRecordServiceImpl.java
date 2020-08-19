@@ -26,4 +26,9 @@ public class GasUserChargeRecordServiceImpl extends ServiceImpl<GasUserChargeRec
     public boolean insertCharge(List<GasUserChargeRecordEntity> gasUserChargeRecordEntities) {
         return this.saveOrUpdateBatch(gasUserChargeRecordEntities);
     }
+
+    @Override
+    public boolean saveOrUpdates(GasUserChargeRecordEntity gasUserChargeRecordEntities) {
+        return this.saveOrUpdate(gasUserChargeRecordEntities);
+    }
 }

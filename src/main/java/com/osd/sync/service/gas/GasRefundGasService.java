@@ -15,4 +15,5 @@ import java.util.List;
  */
 public interface GasRefundGasService extends IService<GasRefundGasEntity> {
     boolean insetRefund(List<GasRefundGasEntity> refundGasEntities);
+    boolean saveOrUpdates(GasRefundGasEntity refundGasEntities);
 }

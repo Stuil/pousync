@@ -26,4 +26,9 @@ public class GasRefundGasServiceImpl extends ServiceImpl<GasRefundGasMapper, Gas
     public boolean insetRefund(List<GasRefundGasEntity> refundGasEntities) {
         return this.saveOrUpdateBatch(refundGasEntities);
     }
+
+    @Override
+    public boolean saveOrUpdates(GasRefundGasEntity refundGasEntities) {
+        return this.saveOrUpdate(refundGasEntities);
+    }
 }

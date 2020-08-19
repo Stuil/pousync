@@ -30,7 +30,6 @@ public class DataSourceAspect {
 
     @Before("pointCut() && (@annotation(dataSource)||@within(dataSource))")
     public void doBefore(DataSource dataSource){
-        log.info("选择数据源---"+dataSource.value().getValue());
         DataSourceContextHolder.setDataSource(dataSource.value().getValue());
     }
 

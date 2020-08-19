@@ -1,8 +1,10 @@
 package com.osd.sync.service.gas;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.osd.sync.datasource.DataSource;
 import com.osd.sync.datasource.DataSourceEnum;
+import com.osd.sync.entity.gas.GasAreaCommunityEntity;
 import com.osd.sync.entity.gas.GasBookNoEntity;
 import com.osd.sync.mapper.gas.GasBookNoMapper;
 import com.osd.sync.service.gas.GasBookNoService;
@@ -24,5 +26,20 @@ public class GasBookNoServiceImpl extends ServiceImpl<GasBookNoMapper, GasBookNo
     public GasBookNoEntity getBooks(String communityId) {
         return this.list(new QueryWrapper<GasBookNoEntity>()
                 .eq("communityId",communityId).orderByDesc("id")).get(0);
+    }
+
+    @Override
+    public GasBookNoEntity getOnes(Wrapper<GasBookNoEntity> queryWrapper) {
+        return this.getOne(queryWrapper);
+    }
+
+    @Override
+    public boolean saves(GasBookNoEntity bookNoEntity) {
+        return this.save(bookNoEntity);
+    }
+
+    @Override
+    public boolean updates(GasBookNoEntity bookNoEntity) {
+        return this.updateById(bookNoEntity);
     }
 }

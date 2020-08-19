@@ -14,4 +14,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface GasUserService extends IService<GasUserEntity> {
 
     boolean insetUser(GasUserEntity gasUserEntity);
+
+    boolean updateUser(GasUserEntity gasUserEntity);
+
+    GasUserEntity getByAcc(String account);
+
 }

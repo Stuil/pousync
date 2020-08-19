@@ -138,8 +138,7 @@ package com.osd.sync.entity.gas;
             /**
             * 是否公用户
             */
-      /*  @TableField("publicUser")
-    private Boolean publicUser;*/
+  /*  private Boolean publicUser;*/
 
             /**
             * 用户状态
