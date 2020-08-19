@@ -155,6 +155,7 @@ public class DataInfoServer {
                 }
                 //   人员
                 // 用户循环
+                // FIXME:   缴费 用户票据单   是否显示费用详情  ；  用户详情界面 各个参数信息查询及点击检查
                 consumer.forEach(item -> {
                     UsercardinfoEntity cardInfo = usercardinfoService.getById(item.getCsmId());
                     // 购气、退气、补气全记录

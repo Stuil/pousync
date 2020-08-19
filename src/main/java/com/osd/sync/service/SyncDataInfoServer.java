@@ -263,7 +263,7 @@ public class SyncDataInfoServer {
                     } else {
                         meterCount.getAndIncrement();
                     }
-
+                    // FIXME:   缴费 用户票据单   是否显示费用详情  ；  用户详情界面 各个参数信息查询及点击检查
                     jfAcc.forEach(accGas -> {
                         // 购气
                         if (accGas.getCoWatercount() > 0) {
