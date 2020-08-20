@@ -71,7 +71,7 @@ public class IndexController {
      * @author: zwh
      */
 
-    @RequestMapping("/sync")
+  //  @RequestMapping("/sync")
     public String sync(Integer id) {
         long start = System.currentTimeMillis() / 1000;
         syncDataInfoServer.syncCommAndConsumer(id);
@@ -97,7 +97,7 @@ public class IndexController {
      * @date: 2020/8/19
      * @author: zwh
      */
-    @RequestMapping("/ser")
+  //  @RequestMapping("/ser")
     public String ser(Integer id) {
         long start = System.currentTimeMillis() / 1000;
         syncServer.syncCommAndConsumer(id);

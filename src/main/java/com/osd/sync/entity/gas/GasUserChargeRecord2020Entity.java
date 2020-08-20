@@ -145,7 +145,7 @@ package com.osd.sync.entity.gas;
             * 购气次数
             */
         @TableField("buyGasTimes")
-    private Integer buyGasTimes;
+    private Long buyGasTimes;
 
             /**
             * 累计购气量

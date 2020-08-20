@@ -82,12 +82,13 @@ public class DataInfoServer {
         List<GasMendGasEntity> mendGasList = new ArrayList<>();
         List<GasRefundGasEntity> refundGasList = new ArrayList<>();
         List<CommunityEntity> list = new ArrayList<>();
-        List<ConsumerEntity> consumer1 = consumerService.list();
-        if (id != null) {
+        int jfConsumerCount=0;
+        if (id != null && id!=0) {
             list = communityService.list(new QueryWrapper<CommunityEntity>().eq("Comm_id", id).orderByAsc("Comm_id"));
+            jfConsumerCount=consumerService.count(new QueryWrapper<ConsumerEntity>().eq("Community_Comm_id",id));
         } else {
             list = communityService.list(new QueryWrapper<CommunityEntity>().orderByAsc("Comm_id"));
-            // list=list.subList(0,500);
+            jfConsumerCount=consumerService.count();
         }
         // 小区
         try {
@@ -113,6 +114,7 @@ public class DataInfoServer {
                         areaCount.getAndIncrement();
                     }
                 } else {
+                    areaCommunity.setId(commNames.getId());
                     boolean areaComm = gasAreaCommunityService.updates(areaCommunity);
                     if (!areaComm) {
                         log.error("更新失败:{}", areaCommunity.getId());
@@ -294,7 +296,8 @@ public class DataInfoServer {
                             gasUserCharge.setBuyGas(BigDecimal.valueOf(accGas.getCoWatercount()));
                             gasUserCharge.setBuyGasAmount(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoTotalnormalfee())));
                             // 购气次数
-                            gasUserCharge.setBuyGasTimes(Long.valueOf(countGas++));
+                            countGas=countGas+1;
+                            gasUserCharge.setBuyGasTimes(Long.valueOf(countGas));
                             // 总购气量
                             countGasSum=countGasSum+accGas.getCoWatercount();
                             gasUserCharge.setTotalBuyGas(BigDecimal.valueOf(countGasSum));
@@ -363,7 +366,7 @@ public class DataInfoServer {
                             long price = MoneyUtil.yuanToLi(String.valueOf(accGas.getCoUnitnormalfee()));//单价
                             gasMendGasEntity.setCostMoney(price * accGas.getCoFreewater());
                             // fixme  补气记录总购次数
-                            gasMendGasEntity.setBuyGasTimes(countGas++);
+                            gasMendGasEntity.setBuyGasTimes(countGas);
                             gasMendGasEntity.setChargeType(0);
                             gasMendGasEntity.setFeeDetail("");
                             gasMendGasEntity.setDelFlag(false);
@@ -422,7 +425,7 @@ public class DataInfoServer {
             log.info("用户成功{}条,水表成功{}条,购气成功{}条,补气成功{}条，退气成功{}条",
                     count, meterCount, buyGasCount, mendGasCount, refundGasCount);
             log.info("用户总{}条,水表总{}条,购气总{}条,补气总{}条，退气总{}条",
-                    consumer1.size(), consumer1.size(), chargeRecordList.size(),
+                    jfConsumerCount, jfConsumerCount, chargeRecordList.size(),
                     mendGasList.size(), refundGasList.size());
             return res + "=====" + counta;
         } catch (Exception e) {

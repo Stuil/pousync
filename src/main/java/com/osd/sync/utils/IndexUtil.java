@@ -15,12 +15,13 @@ public class IndexUtil {
     public static void main(String[] args) {
         System.out.println(getA());
     }
-    public static AtomicInteger getA(){
+    public static int getA(){
+        int a=0;
         for(int i=0;i<5;i++){
-            AtomicInteger a=new AtomicInteger();
-            a.getAndIncrement();
-            return a;
+
+           a++;
+            System.out.println(a);
         }
-        return null;
+        return a;
     }
 }
