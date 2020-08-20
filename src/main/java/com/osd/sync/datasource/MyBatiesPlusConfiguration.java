@@ -109,6 +109,8 @@ public class MyBatiesPlusConfiguration {
         configuration.setJdbcTypeForNull(JdbcType.NULL);
         configuration.setMapUnderscoreToCamelCase(true);
         configuration.setCacheEnabled(false);
+        // sql 打印
+       // configuration.setLogImpl(org.apache.ibatis.logging.stdout.StdOutImpl.class);
         sqlSessionFactory.setConfiguration(configuration);
         sqlSessionFactory.setPlugins(new Interceptor[]{ //PerformanceInterceptor(),OptimisticLockerInterceptor()
                 paginationInterceptor() //添加分页功能

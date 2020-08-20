@@ -47,36 +47,24 @@ import java.util.stream.Collectors;
 public class IndexController {
 
     @Autowired
-    IndexServer indexServer;
+    ConsumerService consumerService;
+
     @Autowired
-    SyncDataInfoServer syncDataInfoServer;
+    GasUserService gasUserService;
 
     @Autowired
     DataInfoServer dataInfoServer;
 
-    @Autowired
-    SyncServer syncServer;
-
-  //  @RequestMapping("/indexInfo")
-    public String indexInfo(Integer id) {
-        long start = System.currentTimeMillis() / 1000;
-        indexServer.syncInfo(id);
-        long end = System.currentTimeMillis() / 1000;
-        return start + "-----" + end + "----------" + (end - start)+"===同步人員id"+(id==null?"all":id+"");
-    }
-
     /**
-     * @description: 购气 补气 退气  一起循环入库  用java8 表达式
-     * @date: 2020/8/19
+     * @description: 测试接口是否正常
+     * @date: 2020/8/20
      * @author: zwh
      */
-
-  //  @RequestMapping("/sync")
-    public String sync(Integer id) {
-        long start = System.currentTimeMillis() / 1000;
-        syncDataInfoServer.syncCommAndConsumer(id);
-        long end = System.currentTimeMillis() / 1000;
-        return start + "-----" + end + "----------" + (end - start);
+    @RequestMapping("/index")
+    public String index() {
+        consumerService.getOne(new QueryWrapper<ConsumerEntity>().eq("CSM_id",1));
+        gasUserService.getByAcc("0001000001");
+        return "success";
     }
 
     /**
@@ -92,16 +80,4 @@ public class IndexController {
         return start + "-----" + end + "----------" + (end - start);
     }
 
-    /**
-     * @description: 购气 补气 退气分开循环入库
-     * @date: 2020/8/19
-     * @author: zwh
-     */
-  //  @RequestMapping("/ser")
-    public String ser(Integer id) {
-        long start = System.currentTimeMillis() / 1000;
-        syncServer.syncCommAndConsumer(id);
-        long end = System.currentTimeMillis() / 1000;
-        return start + "-----" + end + "----------" + (end - start);
-    }
 }
