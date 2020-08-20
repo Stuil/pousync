@@ -165,10 +165,14 @@ public class DataInfoServer {
                             .eq("CO_ConsumerId", item.getCsmId()).and(i -> i.ne("CO_WaterCount", 0).or().ne("CO_Freewater", 0)).orderByAsc("CO_CreateTime"));
                     // 金凤库充值记录
                     List<CardoprecordEntity> cardCord = cardoprecordService.list(new QueryWrapper<CardoprecordEntity>()
-                            .eq("CO_ConsumerId", item.getCsmId()).gt("CO_WaterCount", 0).orderByAsc("CO_id").orderByAsc("CO_CreateTime"));
+                            .eq("CO_ConsumerId", item.getCsmId()).gt("CO_WaterCount", 0).orderByAsc("CO_id"));
                     // 退气记录
                     List<CardoprecordEntity> reFundCord = cardoprecordService.list(new QueryWrapper<CardoprecordEntity>()
+                            .eq("CO_ConsumerId", item.getCsmId()).lt("CO_WaterCount", 0).orderByAsc("CO_id"));
+/*
+                    List<CardoprecordEntity> reFundCord = cardoprecordService.list(new QueryWrapper<CardoprecordEntity>()
                             .eq("CO_ConsumerId", item.getCsmId()).lt("CO_WaterCount", 0).orderByAsc("CO_id").orderByAsc("CO_CreateTime"));
+*/
                     // 金凤 库补卡
                     int mendCount = makeupcardService.count(new QueryWrapper<MakeupcardEntity>()
                             .eq("MUC_ConsumerId", item.getCsmId()).eq("MUC_OPType", 3));
