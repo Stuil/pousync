@@ -286,7 +286,8 @@ public class DataInfoServer {
                             gasUserCharge.setId(SyncUtil.accNo(accGas.getCoCreatetime(), accGas.getCoId()));
                             gasUserCharge.setAccountNumber(gasUser.getAccountNumber());
                             gasUserCharge.setMeterId(gasUser.getMeterId());
-                            gasUserCharge.setPaidAmount(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoTotalnormalfee())));
+                            gasUserCharge.setPaidAmount(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoTotalnormalfee()
+                                    +accGas.getCoTodayremainmoney()-accGas.getCoLastremainmoney())));
                             gasUserCharge.setChangeMoney(0L);
                             gasUserCharge.setArrears(0L);
                             gasUserCharge.setBalance(MoneyUtil.yuanToLi(String.valueOf(accGas.getCoLastremainmoney())));
